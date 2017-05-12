@@ -6,6 +6,7 @@ var Brands = require('./views/Brands.vue')
 Vue.use(VueRouter)
 
 var router = new VueRouter({
+	mode: 'history',
   routes: [
     { path: '/brands', component: Brands },
   ]
