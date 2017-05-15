@@ -1,28 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>vue-router</title>
-	<link rel="manifest" href="/manifest.json">
-  </head>
-  <body>
-	<a href="index2.html">index2</a>
-  	<div id="app">
-      
-      <header>
-        <div class="header-wrapper">
-          <img src="http://acmelogos.com/images/logo-8.svg" alt="" class="logo">
-			
-          <nav>
-            <router-link to="/brands">+ Бренды</router-link>
-          </nav>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>My vue.js SEO check</title>
+
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        <!-- Styles -->
+        <link href="css/app.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="app">
+            <!-- Static navbar -->
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#">Laravel</a>
+					</div>
+					<div id="navbar" class="navbar-collapse collapse">
+						<ul class="nav navbar-nav">
+							<router-link to="/" tag='li' exact>
+								<a>Задачи</a>
+							</router-link>
+							<router-link to="/persons" tag='li' exact>
+								<a>Персоны</a>
+							</router-link>
+							<router-link to="/blog" tag='li' exact>
+								<a>Блог</a>
+							</router-link>
+						</ul>
+
+					</div><!--/.nav-collapse -->
+				</div><!--/.container-fluid -->
+			</nav>
+            <router-view></router-view>
         </div>
-      </header>
-
-      <router-view></router-view>
-
-    </div>
-
-    <script src="build/bundle.js"></script>
-  </body>
+        <script src="/build/bundle.js"></script>
+    </body>
 </html>

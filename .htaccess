@@ -1,0 +1,16 @@
+Options -Indexes
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+	RewriteCond %{REQUEST_FILENAME} -f
+	RewriteRule \.(css|js|png|jpg|gif)$ - [L]
+	RewriteCond %{REQUEST_FILENAME} -f
+    RewriteRule ^assets/(.+?)$ node_modules/$1 [L,QSA]
+    RewriteRule ^(node_modules)($|/) - [L]
+    RewriteRule ^(data)($|/) - [L]
+    RewriteRule ^(.*)$ index.php [L]
+
+</IfModule>
+<IfModule mod_env.c>
+    SetEnv no-gzip 1
+</IfModule>
